@@ -1,9 +1,13 @@
+<?php
+// the code below attaches our dbconnect file to this file.
+    include_once 'php/dbconnect.php';
+?>
 <!DOCTYPE html>
 <html class="no-js" lang="en">
     <head>
         <meta charset="utf-8">
         <meta http-equiv="x-ua-compatible" content="ie=edge">
-        <title></title>
+        <title>Persistant Data Storage</title>
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -22,10 +26,33 @@
         <![endif]-->
 
         <!-- Add your site or application content here -->
-        <?php 
-        /* Write your PHP here */
-        
-        ?> 
+     <header> 
+            <h1>Notebook</h1>
+            <p>Write your title and notes entry below. Then click on the Submit button.</p>
+            </header>
+
+            <section class="note-hold">
+
+                <section class="ink-holder">
+                        <!-- Form element below, is called 'notesForm'. It's job is to determine using the action, onsubmit and method attributes, what will hapen when someone clicks on the submit button. In this case, our form will reach out and reference the upload.php file when the submit button is clicked. -->
+                        <form name="notesForm" action="php/upload.php" onsubmit="return" method="post">
+
+                            <p>
+                                <input type="text" name="title" id="title" placeholder="Note Title">
+                            </p>
+
+                            <p>
+                                <textarea type="text" name="note" id="note" placeholder="Your Note Entry"></textarea>
+                            </p>
+
+                            <input type="submit" id="submitbutton" value="Submit Note">
+
+
+                        </form>
+
+                </section>
+
+            </section>
 
            
 
